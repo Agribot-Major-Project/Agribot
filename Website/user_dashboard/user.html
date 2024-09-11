@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriAdvise</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="user.css">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">AgriAdvise</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Edit Profile</a>
+                    <a class="dropdown-item" href="#">LogOut</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="list-group list-group-flush">
+            <a href="user.html" class="list-group-item list-group-item-action bg-light">Home</a>
+            <a href="overview.html" class="list-group-item list-group-item-action bg-light">Overview of Sensor's Data</a>
+            <a href="previous.html" class="list-group-item list-group-item-action bg-light">Previous Records</a>
+            <a href="notification.html" class="list-group-item list-group-item-action bg-light">Notifications</a>
+            <a href="connection.html" class="list-group-item list-group-item-action bg-light">Connecting Sensors</a>
+            <a href="resources.html" class="list-group-item list-group-item-action bg-light">Resources</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Hello username,</h1>
+            <div id="recommendations">
+                Crop Recommended
+
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+<script>
+    async function getRecommendations(inputData) {
+    const response = await fetch('http://localhost:5000/recommend', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ input: inputData }),
+    });
+    const data = await response.json();
+    displayRecommendations(data.crops);
+}
+
+function displayRecommendations(crops) {
+    const container = document.getElementById('recommendations');
+    container.innerHTML = '';
+    crops.forEach(crop => {
+        const cropElement = document.createElement('div');
+        cropElement.innerHTML = `
+            <h3>${crop.name}</h3>
+            <p>Yield: ${crop.yield}</p>
+            <p>Profit: ${crop.profit}</p>
+            <p>Notes: ${crop.notes}</p>
+        `;
+        container.appendChild(cropElement);
+    });
+}
+
+// Example call to getRecommendations with sample input data
+getRecommendations({ input: 'sample input data' });
+</script>
+
+</body>
+</html>

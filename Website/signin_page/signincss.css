@@ -1,0 +1,156 @@
+
+/* Navbar styles */
+.second {
+    background-color: #034a95;
+}
+
+/* Glass effect styles */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2; /* Ensure it is above the overlay */
+    margin-top: 30px;
+    
+}
+
+.glass-card .form-group label {
+    color: white;
+}
+
+.glass-card .form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+}
+
+.glass-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.glass-card .btn-light {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+}
+
+.glass-card .btn-light:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+#User{
+    text-decoration: none;
+}
+/* Additional styles for form and buttons */
+body {
+    position: relative;
+    background-image: url('organic-wheat-field_bg.webp'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-attachment: fixed; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(73, 73, 73, 0.5); /* Semi-transparent overlay */
+    z-index: 1; /* Ensure the overlay is above the background but below the glass card */
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.login {
+    color: aliceblue;
+    font-weight: bolder;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    z-index: 3; /* Ensure the form is above the overlay */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.button2{
+    display: inline-block;
+    text-decoration: none;
+    color: #1b094e;
+    font-weight: bolder;
+    background-color:rgb(241, 241, 241);
+    font-size: 14px;
+    border: 3px solid;
+    transition: 0.5s;
+    width:500px;
+    border-radius: 20px;
+    border-color: #ffffff;
+}
+
+.button2:hover{
+   
+    /* background-image: linear-gradient(45deg, #305ad7, #305ad7); */
+    background-color:rgb(255, 245, 133);
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: 3px solid;
+    border-color: #ffffff;
+}
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.p-4 {
+    padding: 1.5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.horizontal-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.vertical-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-buttons .btn-light {
+    margin-bottom: 10px; /* Add spacing between vertical buttons */
+}
