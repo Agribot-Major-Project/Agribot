@@ -12,7 +12,7 @@
 <div class="container d-flex justify-content-center align-items-center min-vh-100">
   <div class="glass-card p-4">
     <h2 class="text-center mb-4 login">Sign In</h2>
-    <form>
+    <form id="signinForm">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Enter your email">
@@ -23,7 +23,8 @@
       </div>
       <br>
       <div class="text-center mb-4 horizontal-buttons">
-        <a href="../user_dashboard/user.html" class="btn button2 mx-1" id="User">Sign In</a>
+        <!-- Sign In button triggers form submission -->
+        <button type="submit" class="btn button2 mx-1" id="submit">Sign In</button>
       </div>
       <div class="text-center vertical-buttons">
         <button type="button" class="btn btn-light mx-1">Continue with Google</button>
@@ -31,11 +32,14 @@
         <button type="button" class="btn btn-light mx-1">Continue with Apple</button>
       </div>
       <div class="text-center">
-       Don't have an account? <a href="../signup_page/signup.html">Sign Up</a>
+        Don't have an account? <a href="../signup_page/signup.html">Sign Up</a> 
       </div>
     </form>
   </div>
 </div>
+
+<!-- Include the signin.js script -->
+<script type="module" src="signin.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
