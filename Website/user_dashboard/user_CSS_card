@@ -1,0 +1,81 @@
+.second{
+    background-color: #034a95;
+}
+
+/* Custom styles for the sidebar and page content */
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#page-content-wrapper {
+    flex: 1;
+    padding: 20px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    margin-left: -250px;
+}
+
+@media (min-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+}
+
+.dropdown-menu{
+    overflow: auto;
+}
+
+#recommendations div {
+    border: 1px solid #0d0d0d;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Custom styles for responsiveness */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #sidebar-wrapper {
+    flex: 1;
+    width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    #wrapper {
+      flex-direction: row;
+    }
+  
+    #sidebar-wrapper {
+      width: 250px;
+      height: 100vh;
+    }
+  }
+  
+  .card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+  }
+  
+  

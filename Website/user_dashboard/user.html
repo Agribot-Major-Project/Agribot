@@ -4,101 +4,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AgriAdvise</title>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="user.css">
 </head>
 <body>
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">AgriAdvise</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Profile
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#">AgriBot</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Sensors
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Edit Profile</a>
-                    <a class="dropdown-item" href="#">LogOut</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">View Sensor Data</a></li>
+                  <li><a class="dropdown-item" href="#">Sensor Health</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Manage Sensors</a></li>
+                  <li><a class="dropdown-item" href="#">Sensor Calibration</a></li>
+                </ul>
+              </li>
 
-<div class="d-flex" id="wrapper">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Data
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">View Records</a></li>
+                  <li><a class="dropdown-item" href="#">Export Data</a></li>
+                </ul>
+              </li>
 
-    <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-        <div class="list-group list-group-flush">
-            <a href="user.html" class="list-group-item list-group-item-action bg-light">Home</a>
-            <a href="overview.html" class="list-group-item list-group-item-action bg-light">Overview of Sensor's Data</a>
-            <a href="previous.html" class="list-group-item list-group-item-action bg-light">Previous Records</a>
-            <a href="notification.html" class="list-group-item list-group-item-action bg-light">Notifications</a>
-            <a href="connection.html" class="list-group-item list-group-item-action bg-light">Connecting Sensors</a>
-            <a href="resources.html" class="list-group-item list-group-item-action bg-light">Resources</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Resources
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Documentation</a></li>
+                  <li><a class="dropdown-item" href="#">Tutorials</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Configuration Settings</a></li>
+                  <li><a class="dropdown-item" href="#">Account Settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
+    </nav>
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-
-        <div class="container-fluid">
-            <h1 class="mt-4">Hello username,</h1>
-            <div id="recommendations">
-                Crop Recommended
-
+    <div class="container mt-4">
+        <h2 class="text-center mb-5">Let's get to work!</h2>
+        
+        <!-- Task Cards -->
+        <div class="row">
+          <!-- Seed Plantation Card -->
+          <div class="col-md-2 col-sm-4 mb-4">
+            <div class="card shadow-sm" style="cursor: pointer;" onclick="window.location.href='../1.seed_plantation/seed_plantation.html'">
+              <img src="images/seed_plantation.jpg" class="card-img-top" alt="Seed Plantation">
+              <div class="card-body text-center">
+                <h5 class="card-title">Seed Plantation</h5>
+              </div>
             </div>
+          </div>
+    
+          <!-- Irrigation Card -->
+          <div class="col-md-2 col-sm-4 mb-4">
+            <div class="card shadow-sm" style="cursor: pointer;" onclick="window.location.href='../2.irrigation/irrigation.html'">
+              <img src="images/irrigation.jpg" class="card-img-top" alt="Irrigation">
+              <div class="card-body text-center">
+                <h5 class="card-title">Irrigation</h5>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Weed Detection Card -->
+          <div class="col-md-2 col-sm-4 mb-4">
+            <div class="card shadow-sm" style="cursor: pointer;" onclick="window.location.href='../3.weed_detection/weed_detection.html'">
+              <img src="images/weed_detection.jpg" class="card-img-top" alt="Weed Detection">
+              <div class="card-body text-center">
+                <h5 class="card-title">Weed Detection</h5>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Crop Monitoring Card -->
+          <div class="col-md-2 col-sm-4 mb-4">
+            <div class="card shadow-sm" style="cursor: pointer;" onclick="window.location.href='../4.crop_monitoring/crop_monitoring.html'">
+              <img src="images/crop_monitoring.jpg" class="card-img-top" alt="Crop Monitoring">
+              <div class="card-body text-center">
+                <h5 class="card-title">Crop Monitoring</h5>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Harvesting Card -->
+          <div class="col-md-2 col-sm-4 mb-4">
+            <div class="card shadow-sm" style="cursor: pointer;" onclick="window.location.href='../5.harvesting/harvesting.html'">
+              <img src="images/harvesting.jpg" class="card-img-top" alt="Harvesting">
+              <div class="card-body text-center">
+                <h5 class="card-title">Harvesting</h5>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <!-- /#page-content-wrapper -->
+      </div>
 
-</div>
-<!-- /#wrapper -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-</script>
-<script>
-    async function getRecommendations(inputData) {
-    const response = await fetch('http://localhost:5000/recommend', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ input: inputData }),
-    });
-    const data = await response.json();
-    displayRecommendations(data.crops);
-}
-
-function displayRecommendations(crops) {
-    const container = document.getElementById('recommendations');
-    container.innerHTML = '';
-    crops.forEach(crop => {
-        const cropElement = document.createElement('div');
-        cropElement.innerHTML = `
-            <h3>${crop.name}</h3>
-            <p>Yield: ${crop.yield}</p>
-            <p>Profit: ${crop.profit}</p>
-            <p>Notes: ${crop.notes}</p>
-        `;
-        container.appendChild(cropElement);
-    });
-}
-
-// Example call to getRecommendations with sample input data
-getRecommendations({ input: 'sample input data' });
-</script>
-
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

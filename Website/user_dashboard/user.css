@@ -1,47 +1,123 @@
-.second{
-    background-color: #034a95;
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light background for modern look */
+    margin: 0;
+    padding: 0;
+    color: #343a40; /* Dark gray text for readability */
 }
 
-/* Custom styles for the sidebar and page content */
-#wrapper {
+/* Navbar Styles */
+.navbar {
+    background-color: white; /* White background for the navbar */
+    border-bottom: 1px solid #ddd; /* Subtle border for separation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4caf50 !important; /* Green color for brand */
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #4caf50; /* Green font for links */
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, border-bottom 0.3s;
+    
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #388e3c; /* Slightly darker green for hover/active state */
+}
+
+/* Dropdown Menu Styles */
+.navbar-nav .dropdown-menu {
+    background-color: white; /* White background for dropdown */
+    border: 1px solid #ddd; /* Subtle border for dropdown */
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+}
+
+.navbar-nav .dropdown-item {
+    color: #4caf50; /* Green text for dropdown items */
+    font-size: 0.9rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-nav .dropdown-item:hover {
+    background-color: #f1f8e9; /* Light green background on hover */
+    color: #388e3c; /* Slightly darker green text */
+}
+
+/* Button Styles (Optional) */
+.navbar-toggler {
+    border: none; /* Remove border */
+    color:#388e3c;
+    padding: 0.25rem 0.75rem;
+    border-radius: 5px;
+}
+
+/* General Layout Enhancements */
+.container {
+    margin-top: 2rem;
+}
+
+/* Add spacing between navigation items */
+.navbar-nav .nav-item {
+    margin-right: 1.5rem; /* Adjust spacing as needed */
+}
+
+/* Remove the margin from the last item for consistency */
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
+}
+
+/* Remove green border when the navbar toggler is clicked */
+.navbar-toggler:focus {
+    color:#388e3c;
+    outline: none;
+    box-shadow: none; /* Remove the border */
+}
+
+
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem; /* Slightly smaller logo on small screens */
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Adjust font size for better readability */
+    }
+}
+
+.row {
     display: flex;
-    align-items: stretch;
-}
+    justify-content: center; /* Aligns cards horizontally */
+    
+  }
 
-#sidebar-wrapper {
-    min-width: 250px;
-    max-width: 250px;
-    height: 100vh;
-    overflow-y: auto;
-}
-
-#page-content-wrapper {
-    flex: 1;
-    padding: 20px;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    margin-left: -250px;
-}
-
-@media (min-width: 768px) {
-    #sidebar-wrapper {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 767px) {
-    #wrapper.toggled #sidebar-wrapper {
-        margin-left: 0;
-    }
-}
-
-.dropdown-menu{
-    overflow: auto;
-}
-
-#recommendations div {
-    border: 1px solid #0d0d0d;
-    padding: 10px;
-    margin: 10px 0;
-}
+/* Ensure all cards have the same height */
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Ensure images within the cards are of equal size */
+  .card-img-top {
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    height: 150px; /* Set a fixed height for the images */
+    width: 100%; /* Make sure the image fills the width of the card */
+  }
+  
+  /* Optional: Make card body fill the remaining space */
+  .card-body {
+    flex-grow: 1;
+  }
+  
